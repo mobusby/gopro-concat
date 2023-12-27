@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function usage() {
+usage() {
 	echo "$0 Series"
 	echo "where \"Series\" is the 4-digit identifier of the series of videos to combine"
 	echo "eg: \"$0 1234\" will combine all the files with names \"GHXX1234.MP4\""
