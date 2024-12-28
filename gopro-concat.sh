@@ -1,20 +1,27 @@
 #!/bin/sh
 
 usage() {
-	echo "$0 Series"
-	echo "where \"Series\" is the 4-digit identifier of the series of videos to combine"
+	echo "$0 [XXXX]"
+	echo "where [XXXX] is the 4-digit identifier of the series of videos to combine"
 	echo "eg: \"$0 1234\" will combine all the files with names \"GHXX1234.MP4\""
 	echo "Note that this command must be run from the directory containing the files to"
 	echo "combine."
 	echo ""
 	echo "Based on instructions found here:"
 	echo "<https://gopro.github.io/labs/control/chapters/>"
+	echo ""
+	echo "Requires udtacopy to be available in your \$PATH."
+	echo "<https://github.com/gopro/labs/tree/master/docs/control/chapters/bin/udtacopy.zip>"
 	exit
 }
 
 if [ ! $# = 1 ]; then 
 	echo "I'm confused, what do you want me to do? \"\$# = $#\""
 	echo ""
+	usage
+fi
+
+if [ $1 = "-h" ]; then
 	usage
 fi
 
